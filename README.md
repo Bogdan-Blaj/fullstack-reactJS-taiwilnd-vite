@@ -1,6 +1,4 @@
-# React + TypeScript + Vite
-
-# Project Title: My Vite React Playground
+# Game-listings: React + TypeScript + Vite
 
 # Description:
 Welcome to My Vite React Playground! This project serves as an exploration and experimentation ground to compare the features and performance of Vite and Create React App. With Create React App being deprecated, Vite emerges as a modern, fast, and lightweight alternative for React development.
