@@ -15,26 +15,28 @@ function Header() {
     <div className="flex items-center p-3">
       <img src={logo} width={60} height={60} />
       <div className="flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full">
-        <HiMagnifyingGlass />
+        <HiMagnifyingGlass className="text-black" />
         <input
           type="Text"
           placeholder="Search game"
-          className=" px-2 bg-transparent outline-none dark:bg-cyan-500"
+          className=" px-2 bg-transparent outline-none text-black"
         />
       </div>
       <div>
-        {theme == "dark" ? (
+        {theme == "light" ? (
           <HiOutlineMoon
             className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
             onClick={() => {
-              setTheme("light");
+              setTheme("dark");
+              localStorage.setItem("theme", "dark");
             }}
           />
         ) : (
           <HiSun
             className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
             onClick={() => {
-              setTheme("dark");
+              setTheme("light");
+              localStorage.setItem("theme", "light");
             }}
           />
         )}
