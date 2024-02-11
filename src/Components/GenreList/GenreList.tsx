@@ -11,11 +11,6 @@ function GenreList() {
     getGenreList();
   }, []);
 
-  useEffect(() => {
-    // Log the updated state after it has been set
-    console.log("genreList", genreList);
-  }, [genreList]); // Add genreList as a dependency to the useEffect
-
   const getGenreList = async () => {
     try {
       const resp: AxiosResponse<GenreResponse> = await GlobalApi.getGenreList();
@@ -31,6 +26,7 @@ function GenreList() {
       <h2 className="text-[30px] font-bold dark:text-white">Genre</h2>
       {genreList.map((item, index) => (
         <div
+          key={item.id}
           onClick={() => setActiveIndex(index)}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 hover:dark:bg-gray-600 p-2  rounded-lg group
         ${activeIndex == index ? "bg-gray-300 dark:bg-gray-600" : null}`}
