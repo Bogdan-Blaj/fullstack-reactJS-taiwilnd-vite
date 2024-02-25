@@ -57,7 +57,7 @@ interface ShortScreenshot {
   image: string;
 }
 
-interface Game {
+export interface Game {
   id: number;
   slug: string;
   name: string;
