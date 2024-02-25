@@ -3,6 +3,7 @@ import GenreList from "../Components/GenreList/GenreList";
 import GlobalApi from "../Services/GlobalApi";
 import { Game, GamesResponse } from "./Games.types";
 import Banner from "../Components/Banner";
+import TrendingGames from "../Components/TrendingGames";
 
 function Home() {
   const [allGames, setAllGames] = useState<Game[]>();
@@ -24,7 +25,12 @@ function Home() {
         <GenreList />
       </div>
       <div className="col-span-34 md:col-span-3">
-        {allGames && <Banner game={allGames[1]} />}
+        {allGames && (
+          <div>
+            <Banner game={allGames[1]} />
+            <TrendingGames games={allGames} />
+          </div>
+        )}
       </div>
     </div>
   );
