@@ -14,7 +14,14 @@ const getGenreList = (): Promise<AxiosResponse<GenreResponse>> => {
 const getAllGames = (): Promise<AxiosResponse<GamesResponse>> => {
   return axiosCreate.get("/games?key=" + key);
 };
+
+const getGameListByGenreId = (
+  id: number,
+): Promise<AxiosResponse<GamesResponse>> => {
+  return axiosCreate.get("/games?key=" + key + "&genres=" + id);
+};
 export default {
   getGenreList,
   getAllGames,
+  getGameListByGenreId,
 };

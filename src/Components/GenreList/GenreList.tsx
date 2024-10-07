@@ -10,6 +10,9 @@ function GenreList() {
   useEffect(() => {
     getGenreList();
   }, []);
+  useEffect(() => {
+    console.log(" use effect" + genreList);
+  }, [genreList]);
 
   const getGenreList = async () => {
     try {
